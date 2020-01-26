@@ -1,0 +1,76 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= current_user.first_name %>&nbsp<%= current_user.middle_name %>&nbsp<%= current_user.last_name %></strong>
+</p>
+
+<p>
+<strong><%= (t 'username_') %>:</strong>
+  <%= current_user.name %>
+</p>
+
+<p>
+<strong><%= (t 'gender_') %>:</strong>
+  <%= current_user.gender %>
+</p>
+
+<p>
+<strong><%= (t 'age_') %>:</strong>
+  <%= current_user.age %>
+</p>
+
+
+<p>
+  <strong><%= (t 'description_') %>:</strong>
+  <%=  current_user.description  %>
+</p>
+
+<p>
+  <strong><%= (t 'interests_') %>:</strong>
+  <%=  current_user.interests  %>
+</p>
+
+
+<% if current_user.schools.count >= 1 %>
+ <div>
+ <%= "Schools" %>
+ <ul>
+ <% current_user.schools.each do |s| %>
+  <li><%= s.name %> <%= s.country %> <%= s.city %> <%= s.state %>
+  <% if s.teams.count >= 1 %>
+   <%= "Teams" %>
+   <ul>
+   <% s.teams.each do |t| %>
+    <li><%= t.name %> <%= t.which_team %> <%= t.position %></li>
+   <% end %>
+   </ul>
+  <% end %>  
+  </li>
+  <% end %>
+ </ul> 
+</div>
+<% end %>
+
+<% if current_user.summer_camps.count >= 1 %>
+ <div>
+ <%= (t 'summer_camps_') %>
+ <ul>
+  <% current_user.summer_camps.each do |s| %>
+   <li>
+    <%= link_to s.name, people_summer_camp_path(s.id) %> <%= s.country %> <%= s.city %> <%= s.state %>
+   </li>
+  <% end %>
+ </ul>
+ </div>
+<% end %>
+
+<br><br>
+<%= link_to (t 'pictures_'), pictures_path, class: "btn btn-primary " %>
+<%= link_to (t 'addresses_'), addresses_path, class: "btn btn-primary " %>
+<%= link_to (t 'schools_'), schools_path, class: "btn  btn-primary " %>
+<%= link_to (t 'summer_camps'), summer_camps_path, class: "btn  btn-primary " %>
+
+<br><br>
+
+<%= link_to (t 'edit_'), edit_profile_path %> | 
+<%= link_to (t 'back_'), '/' %>

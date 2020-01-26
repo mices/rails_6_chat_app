@@ -1,0 +1,396 @@
+﻿ko:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 데이터 검증에 실패하였습니다. %{errors}
+        restrict_dependent_destroy:
+          has_one: "%{record}가 존재하기 때문에 삭제할 수 없습니다"
+          has_many: "%{record}가 존재하기 때문에 삭제할 수 없습니다"
+  date:
+    abbr_day_names:
+    - 일
+    - 월
+    - 화
+    - 수
+    - 목
+    - 금
+    - 토
+    abbr_month_names:
+    -
+    - 1월
+    - 2월
+    - 3월
+    - 4월
+    - 5월
+    - 6월
+    - 7월
+    - 8월
+    - 9월
+    - 10월
+    - 11월
+    - 12월
+    day_names:
+    - 일요일
+    - 월요일
+    - 화요일
+    - 수요일
+    - 목요일
+    - 금요일
+    - 토요일
+    formats:
+      default: "%Y/%m/%d"
+      long: "%Y년 %m월 %d일 (%a)"
+      short: "%m/%d"
+    month_names:
+    -
+    - 1월
+    - 2월
+    - 3월
+    - 4월
+    - 5월
+    - 6월
+    - 7월
+    - 8월
+    - 9월
+    - 10월
+    - 11월
+    - 12월
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 약 한 시간
+        other: 약 %{count}시간
+      about_x_months:
+        one: 약 한 달
+        other: 약 %{count}달
+      about_x_years:
+        one: 약 일 년
+        other: 약 %{count}년
+      almost_x_years:
+        one: 일 년 이하
+        other: "%{count}년 이하"
+      half_a_minute: 30초
+      less_than_x_minutes:
+        one: 일 분 이하
+        other: "%{count}분 이하"
+      less_than_x_seconds:
+        one: 일 초 이하
+        other: "%{count}초 이하"
+      over_x_years:
+        one: 일 년 이상
+        other: "%{count}년 이상"
+      x_days:
+        one: 하루
+        other: "%{count}일"
+      x_minutes:
+        one: 일 분
+        other: "%{count}분"
+      x_months:
+        one: 한 달
+        other: "%{count}달"
+      x_years:
+        one: 일 년
+        other: "%{count}년"
+      x_seconds:
+        one: 일 초
+        other: "%{count}초"
+    prompts:
+      day: 일
+      hour: 시
+      minute: 분
+      month: 월
+      second: 초
+      year: 년
+  errors:
+    format: "%{message}"
+    messages:
+      accepted: "%{attribute}을(를) 반드시 확인해야 합니다"
+      blank: "%{attribute}에 내용을 입력해 주세요"
+      present: "%{attribute}은(는) 비어있어야 합니다"
+      confirmation: "%{attribute}은(는) 서로 일치해야 합니다"
+      empty: "%{attribute}에 내용을 입력해 주세요"
+      equal_to: "%{attribute}은(는) %{count}과 같아야 합니다"
+      even: "%{attribute}에 짝수를 입력해 주세요"
+      exclusion: "%{attribute}은(는) 이미 예약되어 있는 값입니다"
+      greater_than: "%{attribute}은(는) %{count}보다 커야 합니다"
+      greater_than_or_equal_to: "%{attribute}은(는) %{count}보다 크거야 같아야 합니다"
+      inclusion: "%{attribute}은(는) 목록에 포함되어 있는 값이 아닙니다"
+      invalid: "%{attribute}은(는) 올바르지 않은 값입니다"
+      less_than: "%{attribute}은(는) %{count}보다 작아야 합니다"
+      less_than_or_equal_to: "%{attribute}은(는) %{count}과 작거나 같아야 합니다"
+      model_invalid: "%{attribute}에 대한 데이터 검증에 실패하였습니다: %{errors}"
+      not_a_number: "%{attribute}에 숫자를 입력해 주세요"
+      not_an_integer: "%{attribute}에 정수를 입력해 주세요"
+      odd: "%{attribute}에 홀수를 입력해 주세요"
+      required: "%{attribute}은(는) 반드시 있어야 합니다"
+      taken: "%{attribute}은(는) 이미 존재합니다"
+      too_long: "%{attribute}은(는) %{count}자를 넘을 수 없습니다"
+      too_short: "%{attribute}은(는) 적어도 %{count}자를 넘어야 합니다"
+      wrong_length: "%{attribute}은(는) %{count}자여야 합니다"
+      other_than: "%{attribute}은(는) %{count}와(과) 달라야 합니다"
+    template:
+      body: '아래 문제를 확인해 주세요.'
+      header:
+        one: 한 개의 오류로 인해 %{model}을(를) 저장할 수 없습니다
+        other: "%{count}개의 오류로 인해 %{model}을(를) 저장할 수 없습니다"
+  helpers:
+    select:
+      prompt: 선택해주세요
+    submit:
+      create: 등록
+      submit: 제출
+      update: 수정
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%n%u"
+        precision: 0
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: 원
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n%u"
+        units:
+          billion: 십억
+          million: 백만
+          quadrillion: 경
+          thousand: 천
+          trillion: 조
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n%u"
+        units:
+          byte: 바이트
+          gb: 기가바이트
+          kb: 킬로바이트
+          mb: 메가바이트
+          tb: 테라바이트
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ", "
+      two_words_connector: '와(과) '
+      words_connector: ", "
+  time:
+    am: 오전
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      long: "%Y년 %m월 %d일, %H시 %M분 %S초 %Z"
+      short: "%y/%m/%d %H:%M"
+    pm: 오후
+  sign_in: "로그인"
+  sign_up: "가입"
+  sign_out: "로그 아웃"
+  prohibited_this_address_from_being_saved: "이 주소가 저장되지 못하게합니다"
+  country_: "국가"
+  state_: "상태"
+  city_: "도시"
+  postal_zone: "우편 구역"
+  street_address: "주소"
+  street_address0: "번지 2 번선"
+  user_id: "사용자 ID"
+  submit_: "제출"
+  editing_address: "주소 수정 중"
+  show_: "표시"
+  edit_: "편집"
+  delete_: "삭제"
+  back_: "뒤로"
+  listing_addresses: "주소 나열"
+  new_address: "새 주소"
+  are_you_sure: "정말입니까?"
+  post_comment: "의견 게시"
+  post_reply: "답글 게시"
+  restore_: "복원"
+  move_to_trash: "휴지통으로 이동"
+  mark_as_read: "읽음으로 표시"
+  empty_trash: "휴지통 비우기"
+  conversation_: "대화"
+  conversations_: "대화"
+  chatting_with: "채팅 중"
+  says_at: "에서"
+  send_message: "메시지 보내기"
+  email_: "이메일"
+  username_: "사용자 이름"
+  password_: "비밀번호"
+  password_confirmation: "비밀번호 확인"
+  name_: "이름"
+  first_name: "이름"
+  last_name: "성"
+  middle_name: "중간 이름"
+  gender_: "성별"
+  date_of_birth: "생년월일"
+  select_day: "요일 선택"
+  select_month: "월 선택"
+  select_year: "연도 선택"
+  birth_place_country: "출생지 국가"
+  birth_place_state: "출생지 상태"
+  birth_place_city: "출생지 도시"
+  now_living_in: "지금 살고있어"
+  living_there_since: "그곳에 살기"
+  remember_me: "나를 기억해"
+  stop_following: "따라하기"
+  follow_: "따라 가기"
+  a_friend_request_you_sent_to: "보낸 친구 요청"
+  is_pending: "보류 중"
+  accept_friend_request_from: "친구 요청 수락"
+  decline_friend_request_from: "친구 요청 거부"
+  you_are_friends_with: "너는 친구 야."
+  send_a_friend_request: "친구 요청 보내기"
+  you_have: "당신은"
+  following_: '팔로 잉'
+  contact_: "연락처"
+  find_friends: "친구 찾기"
+  ago_: "이전"
+  sent_: "보낸 사람"
+  messages_: "메시지"
+  message_: "메시지"
+  starting_a_conversation_with: "대화 시작"
+  questions_q: "질문?"
+  caption_: "캡션"
+  remove_: "제거"
+  manage_: "관리"
+  new_picture: "새 그림"
+  back_to_team: "팀으로 돌아 가기"
+  back_to_school: "학교에 돌아온다"
+  back_to_profile: "프로필로 돌아 가기"
+  new_: "새로 만들기"
+  picture_: "그림"
+  friends_: "친구"
+  accept_: "동의 함"
+  decline_: "거부"
+  attachment_: "첨부 파일"
+  content_: "콘텐츠"
+  comment_: "댓글"
+  editing_post: "게시물 수정 중"
+  user_: "사용자"
+  listing_posts: "게시물 나열"
+  post_: "게시"
+  new_post: "새 게시물"
+  school_name: "학교 이름"
+  studies_: "공부했다"
+  majored_: "전공"
+  attended_: "참석"
+  from_: "보낸 사람"
+  to_: "받는 사람"
+  what_team_were_you_on: "어떤 팀에 있었습니까?"
+  the_name_of_the_team: "팀 이름"
+  position_: "위치"
+  more_info: "추가 정보"
+  editing_team: "편집 팀"
+  new_team: "새 팀"
+  add_team: "팀 추가"
+  back_to_teams: "팀으로 돌아 가기"
+  timeline_: "타임 라인"
+  about_: "정보"
+  rules_: "규칙: 아래 나열된 규칙 중 하나를 위반하는 사용자의 계정이 일시 중지됩니다."
+  no_engaging_in_criminal_activity: "범죄 행위에 연루되지 않음"
+  no_references_to_or_images: "음악, 비디오, 유형 또는 기타 미디어의 무술을 포함한 폭력이나 무기에 대한 언급이나 이미지 또는 묘사가 없습니다."
+  no_obscenity: "외설 / 속어 / 욕설 / 욕설 금지"
+  no_images_of_genitals: "생식기 이미지 없음"
+  no_posting_or_sharing: "위에 해당하는 링크를 게시하거나 공유하지 않습니다."
+  social_networking_for_people: "사람들을위한 소셜 네트워킹"
+  send_message: "메시지 보내기"
+  search_results_for: "검색 결과"
+  about_me: "내 소개 ..."
+  interests_: "관심 분야"
+  schools_: "학교"
+  teams_: "팀"
+  degrees_: "도"
+  team_: "팀"
+  team_name: "팀 이름"
+  position_: "위치"
+  additional_: "추가"
+  my_interests: "나의 관심사"
+  press_the_esc_key_to_exit: "종료하려면 esc 키를 누르"
+  didnt_receive_confirmation_instructions_q: "확인 지시를받지 못하셨습니까?"
+  forgot_your_password_q: "비밀번호를 분실하셨습니까?"
+  didnt_receive_unlock_instructions_q: "잠금 해제 지침을받지 못하셨습니까?"
+  sign_in_with: "로그인"
+  resend_confirmation_instructions: "재발 확인 지시 사항"
+  welcome_to: "환영합니다"
+  confirm_my_account: "내 계정 확인"
+  password_has_changed: "비밀번호가 변경되었음을 알려 드리기 위해 연락 드리겠습니다."
+  you_can_confirm: "아래 링크를 통해 계정 이메일을 확인할 수 있습니다:"
+  someone_has_requested: "누군가 비밀번호를 변경하라는 링크를 요청했습니다."
+  요청하지 않은 경우: "요청하지 않은 경우이 이메일을 무시하십시오. </ p> <p> 위 링크에 액세스하고 새 링크를 만들 때까지 비밀번호가 변경되지 않습니다."
+  your_account_has_been_locked: "실패한 로그인 시도 횟수가 너무 많아 계정이 잠겼습니다."
+  click_the_link_below_to_unlock_your_account: "아래링크를 클릭하여 계정 잠금을 해제하십시오"
+  unlock_my_account: "내 계정 잠금 해제"
+  new_password: "새 비밀번호"
+  confirm_new_password: "새 암호 확인"
+  change_your_password: "비밀번호 변경"
+  send_me_reset_password_instructions: "암호 재설정 지시 보내기"
+  remember_me: "나를 기억해"
+  resend_unlock_instructions: "재발급 지시 재발행"
+  please_select: "선택하십시오"
+  characters_minimum: "문자 최소값"
+  the_name_of_the_team: "團隊 的 名字"
+  change_my_password: "내 비밀번호 변경"
+  year_old: "Year"
+  update_: "업데이트"
+  page_ : "페이지"
+  account_ : "계정"
+  my_page : "내 페이지"
+  profile_ : "프로필"
+  user_was_successfully_created : "사용자가 성공적으로 생성되었습니다."
+  user_was_successfully_updated : "사용자가 성공적으로 업데이트되었습니다."
+  profile_was_successfully_updated: "프로필이 성공적으로 업데이트되었습니다."
+  pictures_ : "그림"
+  description_: "설명"
+  ask_for_permission_before_sending_pictures: "그림을 보내기 전에 허가 요청"
+  following_: "팔로 잉"
+  followers_: "팔로어"
+  current_address_successfully_set: "현재 주소 성공적으로 설정"
+  no_addresses_warning: "당신은 어떤 주소를 귀하의 프로필 페이지에서 적어도 하나의 주소를 추가 하시기 바랍니다 없어"
+  address_successfully_added: "주소가 성공적으로 추가 되었습니다."
+  address_successfully_updated: "성공적으로 업데이트 된 주소"
+  address_successfully_destroyed: "주소 성공적으로 파괴"
+  band_: "밴드"
+  genre_: "장르"
+  addresses_: "주소"
+  minimum_age_advisory: "17 세 이상이 사이트 사용"
+  if_youre_in_a_band: "밴드에 있다면 밴드와 장르의 이름을 넣고 그렇지 않으면 두 칸을 비워 두십시오"
+  select_state: "상태 선택"
+  select_your_sex: "성별 선택"
+  blog_: "블로그"
+  blogging_: "블로깅"
+  blog_settings_were_successfully_updated: "블로그 설정이 성공적으로 업데이트되었습니다"
+  blog_title: "博客 標題"
+  blog_description: "博客 描述"
+  about_the_author: "關於 作者"
+  main_: "메인"
+  logo_: "로고"
+  should_be_250_x_75_px: "250x75 픽셀이어야합니다."
+  should_be_840_x_263_px: "840 x 263 픽셀이어야합니다."
+  subdomain_: "하위 도메인"
+  social_networking_for_people: "사람들을위한 소셜 네트워킹"
+  multi_blogging_platform: "멀티 블로깅 플랫폼"
+  find_old_classmates: "옛 친구와 학교 친구 찾기"
+  create_profiles_with: " 학교와 사진으로 프로필 만들기 다중 블로깅 플랫폼 자신 만의 블로그 만들기"
+  summer_camps: "여름 캠프"
+  summer_camp_name: "캠프 이름"
+  age_: "나이"

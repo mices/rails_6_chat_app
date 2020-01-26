@@ -1,0 +1,60 @@
+<div class="container">
+
+  <div class="row justify-content-center mb-3">
+    <div class="col-md-12">
+      <div class="input-group">
+        <input
+          type="text"
+          id="copy-room-name"
+          class="form-control"
+          value='<%= "#{request.base_url}/rooms/#{@room.slug}" %>'
+        >
+        <span class="input-group-btn">
+          <button class="btn btn-secondary" type="button" id="copy-button">Click to Copy</button>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <div id="join-btn-container">
+        <button onclick="handleJoinSession()" class="btn btn-salmon btn-block">
+          Join Room
+        </button>
+      </div>
+
+      <div id="leave-btn-container">
+        <button onclick="handleLeaveSession()" class="btn btn-secondary btn-block">
+          Leave Room
+        </button>
+      </div>
+
+      <ul class="list-group">
+        <% present @room do |room_presenter| %>
+          <%= room_presenter.register_link(current_user) %>
+          <%= room_presenter.claim_room_link(current_user) %>
+          <%= room_presenter.toggle_status_link(current_user) %>
+          <%= room_presenter.room_settings_link(current_user) %>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="col-md-9">
+      <span id="room-name" data-room='<%= @room.slug %>'></span>
+      <span id="currentUser" data-email='<%= @user.email %>'></span>
+      <div id="remoteViewContainer"></div>
+
+      <div id="localViewContainer">
+        <video id="selfView" autoplay></video>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<% content_for :page_js do %>
+  <script type="text/javascript">
+    <%= render file: "#{Rails.root}/app/views/rooms/js/webrtc.js" %>
+  </script>
+<% end %>

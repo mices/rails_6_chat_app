@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= current_user.first_name %>&nbsp<%= current_user.middle_name %>&nbsp<%= current_user.last_name %></strong>
+</p>
+
+<p>
+<strong>Gendre:</strong>
+  <%= current_user.gender %>
+</p>
+
+<p>
+  <strong>Birth date:</strong>
+  <%= current_user.birth_date.to_s %>
+</p>
+
+
+<p>
+  <strong>Birth place country:</strong>
+  <%= current_user.birth_place_country %>
+</p>
+
+<p>
+  <strong>Birth place state:</strong>
+  <%= current_user.birth_place_state %>
+</p>
+
+<p>
+  <strong>Birth place city:</strong>
+  <%= current_user.birth_place_city %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= "********" %>
+</p>
+
+
+<%= link_to (t 'edit_'), edit_user_registration_path %> | <%= link_to (t 'back_'), '/' %>

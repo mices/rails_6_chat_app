@@ -1,0 +1,10 @@
+<h2>Chats</h2>
+<br>
+<div id="messages_holder">
+<% @chats.each do |c| %>
+ <% if Message.where("recipients=? and sender=? and read_at is null", current_user.id, User.find(c.sender).id).count > 0 %>
+	<div><b>(<%= Message.where("recipients=? and sender=? and read_at is null", current_user.id, User.find(c.sender).id).count %>) <%= link_to User.find(c.sender).name, chat_path(name: User.find(c.sender).name) %></b></div>
+ <% else %>
+	<div><%= link_to User.find(c.sender).name, chat_path(name: User.find(c.sender).name) %></div>
+ <% end %>
+<% end %>

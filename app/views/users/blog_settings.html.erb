@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+<%= stylesheet_link_tag "bootstrap-image-gallery.min.css" %>
+<%= javascript_include_tag "bootstrap-image-gallery.min.js" %>
+<%= javascript_include_tag "jquery.js" %>
+
+
+
+<% title="#{current_user.name} | Blog settings" %>
+<% content_for :title, "#{title} | Ignatz Mouse" %>
+
+
+<p>
+  Title: <%= current_user.blog_title %>
+</p>
+<p>
+  Description: <%= current_user.blog_description %>
+</p>
+
+<p>
+  Subdomain: <%= current_user.subdomain %>
+</p>
+
+<p>
+  About the author: <%= current_user.blog_about_the_author %>
+</p>
+
+<% if current_user.subdomain? %>
+<br><br>
+Your blog's web address is <a href="http://<%= current_user.subdomain %>.ignatzmouse.com">http://<%= current_user.subdomain %>.ignatzmouse.com</a><br><br>
+<% end %>
+<div>
+ <%= link_to (t 'pictures_'), blog_pictures_path(subdomain: current_user.subdomain) %> | <%= link_to (t 'edit_'), edit_blog_settings_path(subdomain: current_user.subdomain) %> | 
+ <%= link_to (t 'back_'), root_path %>
+</div>
+
+

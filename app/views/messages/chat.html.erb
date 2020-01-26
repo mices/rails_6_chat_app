@@ -1,0 +1,23 @@
+<h3>Conversation with <%= @conversation_with.name %></h3>
+<div id="message_holder">
+   <% @messages.each do |m| %>
+		<% if m.sender==@conversation_with.id %>
+			<div class="container-left">
+				<div class="subscript"><%= User.find(m.sender).name %><br><%= I18n.l m.created_at %></div>
+				<%= m.content %>
+			</div>
+	    <% else %>
+			<div class="container-right">
+				<div class="subscript"><%= User.find(m.sender).name %><br><%= I18n.l m.created_at %></div>
+				<%= m.content %>
+            </div>
+		<% end %>
+	<% end %>
+</div>
+
+<%= form_with model: @message, multipart: true, remote: true do |f| %>
+    <%= f.rich_text_area :content, class: 'form-control' %>
+    <%= f.hidden_field :recipients, value: @conversation_with.id %>
+    <%= f.hidden_field :sender, value: current_user.id %>
+    <%= f.submit 'Send' %>
+<% end %>

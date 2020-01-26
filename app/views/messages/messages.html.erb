@@ -1,0 +1,12 @@
+<h3><%= (t 'messages_') %></h3>
+
+
+<%= @conversation.subject %>
+ 
+<%= @conversation.receipts_for current_user do |receipt| %>
+ <% message = receipt.message %>
+ <%= message.sender.name %>
+ <%= simple_format h message.body %>
+ <%= (t 'sent_') time_ago_in_words(message.updated_at)  (t 'ago_') %>
+<% end %>
+

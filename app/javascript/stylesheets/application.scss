@@ -1,0 +1,145 @@
+@import 'bootstrap';
+@import 'trix/dist/trix.css';
+@import 'actiontext';
+
+
+body {
+padding: 1em;
+font-size: 1.4em;
+}
+
+li {
+font-size: 1.1em;
+}
+
+td {
+padding: .5em;
+}
+
+.search_textarea {
+height: 25px;
+
+}
+
+
+.search_button {
+vertical-align: top;
+height: 1.9em;
+width: 1.9em;
+}
+
+.search_input {
+}
+
+
+.text_input {
+width: 100%;
+}
+
+.submit_input {
+width: 100%;
+}
+
+#main {
+      margin-left: 2em;
+      padding: 1em;
+}
+
+#side {
+    float: left;
+}
+
+
+#posts {
+    float: left;
+	text-align: left;
+    padding: 1em 2em;
+    width: 50%;
+	height: 80%;
+	overflow-x:auto; overflow-y:hidden;
+	}
+
+#events {
+    float: right;
+	text-align: left;
+    padding: 1em 2em;
+    width: 50%;
+	height: 80%;
+	overflow-x:auto; overflow-y:hidden;
+	}
+
+.large_text {
+	font-size: 2em;
+}
+
+.larger_text {
+	font-size: 1.5em;
+}
+
+.subscript { 
+	font-size: .5em;
+}
+
+.logo {
+	float: left;
+	width: 250px;
+}
+
+	#content {
+	background-color: "#FF5733";
+	float: left;
+	width: 45%;
+}
+
+.columns {
+ min-height: 100vh; /* will cover the 100% of viewport */
+ overflow: hidden;
+ display: block;
+ position: relative;
+ padding-bottom: 10px; /* height of your footer */
+}
+
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    height: 10px;
+    width: 100%;
+}
+
+
+.search_button
+{
+background-image: url('../images/search-button.png');
+}
+
+	
+#left
+{
+float: left;
+}
+
+#right
+{
+float: right;
+}
+
+.container-left {
+  border: 2px solid #dedede;
+  border-color: #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #f1f1f1;
+  text-align: left;
+}
+
+.container-right {
+  border: 2px solid #dedede;
+  border-color: #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #f1f1f1;
+  text-align: right;
+}

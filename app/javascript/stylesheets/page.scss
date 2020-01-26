@@ -1,0 +1,17 @@
+#left_column {
+    float: left;
+	text-align: left;
+    padding: 1em 2em;
+    width: 5em;
+	height: 100%;
+	overflow-x:auto; overflow-y:hidden;
+	}
+
+#right_column {
+    float: right;
+	text-align: left;
+    padding: 1em 2em;
+    width: 5em;
+	height: 100%;
+	overflow-x:auto; overflow-y:hidden;
+	}

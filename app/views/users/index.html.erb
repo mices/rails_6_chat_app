@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<span class="larger_text">Listing users </span><%= User.where('confirmed_at is not null').count %> confirmed <%= User.where('confirmed_at is  null').count %> unconfirmed
+
+<table>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.gender %></td>
+		<td><%= ISO3166::Country.find_country_by_alpha2(user.country) %></td>
+		<td><%= user.city %></td>
+		<td><%= user.state %></td>
+    	<td><%= user.confirmed_at %></td>
+        <td><%= link_to (t 'edit_'), edit_user_path(user) %></td>
+        <td><%= link_to (t 'delete_'), user, method: :delete, data: { confirm: (t 'are_you_sure') } %></td>
+		<td><%= link_to (t 'restrictions'), user_restrictions_path(user_id: user.id) %>
+      </tr>
+    <% end %>
+</table>
+
+<br>
+

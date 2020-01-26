@@ -1,0 +1,6 @@
+<%= form_tag("/messages/send_message", method: "post", url: send_message_path) do  %>
+<%= hidden_field_tag :user_id, "#{@user.id}" %>
+<%= text_field_tag :subject, nil, :class => 'form-control', :placeholder => (t 'subject') %>
+<%= text_area_tag :message, nil, :class => 'form-control', :placeholder => (t 'message_') %>
+<%= submit_tag(value=(t 'submit_')), :class => "btn btn-primary " %>
+<% end %>

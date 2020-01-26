@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><%= yield(:title) %></title>
+<%= favicon_pack_tag 'favicon.ico' %>
+<%= stylesheet_pack_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'   %>
+<%= csrf_meta_tags %>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="<%= controller.controller_name %>">
+
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+	  
+   
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    <% if user_signed_in? %>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= current_user.name %>
+        </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		  <%= link_to (t 'messages_'), chats_path, class: "dropdown-item" %>
+		  <%= link_to (t 'sign_out'),  destroy_user_session_path, class: "dropdown-item",  method: :delete %>
+        </div>
+      </li>
+      <% else %>
+      <li class="nav-item">
+        <%= link_to (t 'sign_in'), new_user_session_path %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+
+ <div id="columns" class="columns">
+
+  <div id="side">
+  </div>
+  
+  <div id="main">
+     <%= yield %>
+  </div>
+
+ </div>
+
+</body>
+</html>
+
