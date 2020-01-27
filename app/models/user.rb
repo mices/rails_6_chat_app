@@ -62,21 +62,6 @@ class User < ActiveRecord::Base
     ['Wyoming', 'WY']
   ]
 
-  def validate_age
-      if birth_date.present? && birth_date > 17.years.ago.to_i
-          errors.add(:birth_date, (t 'age_advisory'))
-      end
-  end
-  
- def mailboxer_email(object)
-  #Check if an email should be sent for that object
-  #if true
-  return self.user.email
-  #if false
-  #return nil
- end
-
-
   
 end
 
