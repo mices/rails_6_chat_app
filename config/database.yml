@@ -19,8 +19,8 @@ default: &default
 
 development:
   <<: *default
-  database: rails_6_chat_app_development
-  username: mices
+  database: ignatzmouse_development
+  username: fugee
   password: password
   socket: /var/run/mysqld/mysqld.sock
 

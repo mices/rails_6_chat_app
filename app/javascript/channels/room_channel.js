@@ -14,7 +14,7 @@ consumer.subscriptions.create("RoomChannel", {
   },
 
        received(data) {
-         $(document).on('trix-initialize', function ()  { 
+
   	        console.log(data.content)
 	        console.log(data.msg_time)
 	        console.log(data.sender_name)
@@ -23,17 +23,17 @@ consumer.subscriptions.create("RoomChannel", {
 			   if (data.sender==Cookies.get('current_user_id')) 
 				   {
 				   console.log ('sender matches current_user_id')
-					$('#message_holder').editor.insertHTML('<div class="container-right"><div class="subscript">' + data.sender_name + '<br>' + data.msg_time + '</div>' + data.content + '</div>')
+					$('#message_holder').append('<div class="container-right"><div class="subscript">' + data.sender_name + '<br>' + data.msg_time + '</div>' + data.content.body + '<br>' + '<img src="' + data.attachment + '"></div>')
 				   }
 			   else
 				   {
 					console.log ('sender and current_user_id are different')
-					$('#message_holder').editor.insertHTML('<div class="container-left"><div class="subscript">' + data.sender_name + '<br>' + data.msg_time + '</div>' + data.content + '</div>')
+					$('#message_holder').append('<div class="container-left"><div class="subscript">' + data.sender_name + '<br>' + data.msg_time + '</div>' + data.content.body + '<br>' + '<img src="' + data.attachment + '"></div>')
 				   }
-	      })
+
 	   }
 
-});
+})
 
 
 
