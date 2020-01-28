@@ -13,7 +13,8 @@ consumer.subscriptions.create("RoomChannel", {
     // Called when the subscription has been terminated by the server
   },
 
-       received(data) {
+       received(data) 
+          {
 
   	        console.log(data.content)
 	        console.log(data.msg_time)
@@ -24,23 +25,14 @@ consumer.subscriptions.create("RoomChannel", {
 				   {
 				   console.log ('sender matches current_user_id')
 					$('#message_holder').append('<div class="container-right"><div class="subscript">' + data.sender_name + '<br>' + data.msg_time + '</div>' + data.content.body + '</div>')
-				   if (typeof data.attachment != "undefined") 
-					   {
-						  $('#message_holder').append('<img src="' + data.attachment + '">')
-					   }
+                   }
 			   else
 				   {
 					console.log ('sender and current_user_id are different')
 					$('#message_holder').append('<div class="container-left"><div class="subscript">' + data.sender_name + '<br>' + data.msg_time + '</div>' + data.content.body + '</div>')
-				   if (typeof data.attachment != "undefined") 
-					   {
-						  $('#message_holder').append('<%= image_tag(' + m.attachment + ', height: 200) %>')
-					   }
-
 				   }
 
-	   }
-
+	      }
 })
 
 
